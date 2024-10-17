@@ -8,7 +8,6 @@ import sys
 
 ## This method calculates the file hash, and return the calculated hash.
 ## raises an Error if the file is not found or if other Erro occurs.
-<<<<<<< HEAD
 def hashfile(file_path, sha_algorithm):
     try:
         with open(file_path, 'rb') as file:
@@ -42,7 +41,8 @@ def hashfile(file_path, sha_algorithm):
 ## verfiy integrity and any changes made into the document on file
 def compared_hash(file_path, stored_hash, sha_algorithm):
     current_hash = hashfile(file_path, sha_algorithm)
-=======
+
+
 def hashfile(file_path):
     try:
         with open(file_path, 'rb') as file:
@@ -60,7 +60,6 @@ def hashfile(file_path):
 ## verfiy integrity and any changes made into the document on file
 def compared_hash(file_path, stored_hash):
     current_hash = hashfile(file_path)
->>>>>>> 7fc3ff348bb9e955d7ab1d4a7bee45d3ee841995
     if current_hash == stored_hash:
         print("File integrity is successfull!" )
     else:
@@ -101,18 +100,17 @@ def main():
         print("please provide a file name!")
         sys.exit(1)
     file_path = sys.argv[1]
-<<<<<<< HEAD
+
     hash_algorithm = sys.argv[2].lower()
     file_to_hash = hashfile(file_path, hash_algorithm)
     print("the hashed file", file_to_hash)
     print(f"the hashed file: {file_to_hash}")
     compared_hash(file_path, file_to_hash, hash_algorithm)
-=======
+
     file_to_hash = hashfile(file_path)
     print("the hashed file", file_to_hash)
     print(f"the hashed file: {file_to_hash}")
     compared_hash(file_path, file_to_hash)
->>>>>>> 7fc3ff348bb9e955d7ab1d4a7bee45d3ee841995
 
     print(file_validation(file_path))
 
